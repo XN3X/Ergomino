@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="morning">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ergomino — Ergonomia visual para livros infantojuvenis</title>
+  <meta name="description" content="Ergonomia visual baseada em evidências para livros e revistas infantojuvenis. Monte o perfil do leitor e receba uma ficha de editoração com faixas de valores, justificativas e nível de evidência.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#2196f3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232196f3'/%3E%3Cpath d='M6 10h20M6 22h20' stroke='%230b1c2a' stroke-opacity='.45' stroke-width='1.2'/%3E%3Cpath d='M11 10l10 12M21 10L11 22' stroke='%230b1c2a' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo" id="topo">
+    <div class="topo-inner">
+      <a class="marca" href="#inicio" data-nav="inicio">
+        <svg class="marca-icone" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="7" fill="#2196f3" />
+          <path d="M6 10h20M6 22h20" stroke="#0b1c2a" stroke-opacity=".45" stroke-width="1.2" />
+          <path d="M11 10l10 12M21 10L11 22" stroke="#0b1c2a" stroke-width="3.2" stroke-linecap="round" />
+        </svg>
+        <span class="marca-nome">Ergomino</span>
+      </a>
+
+      <nav class="nav-principal" aria-label="Seções do site">
+        <a href="#guia" data-nav="guia">Guia</a>
+        <a href="#mitos" data-nav="mitos">Mitos</a>
+        <a href="#referencias" data-nav="referencias">Referências</a>
+        <a href="#sobre" data-nav="sobre">Sobre e método</a>
+      </nav>
+
+      <div class="controles" role="group" aria-label="Busca, leitura e aparência">
+        <button type="button" class="ctrl" id="btn-busca" aria-keyshortcuts="/">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <span class="ctrl-rotulo">Buscar</span>
+        </button>
+        <div class="tema" role="radiogroup" aria-label="Modo de cor">
+          <button type="button" role="radio" aria-checked="true" data-tema="morning" aria-label="Morning: modo claro">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <span>Morning</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-tema="afternoon" aria-label="Afternoon: leitura confortável">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.5 15.5a5.5 5.5 0 0 1 11 0" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="M2.5 19.5h19M12 3.5v3M4.2 7.2l2.1 2.1M19.8 7.2l-2.1 2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <span>Afternoon</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-tema="night" aria-label="Night: modo escuro">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M15.5 3.5a8.5 8.5 0 1 0 5 15.4A9 9 0 0 1 15.5 3.5z" fill="currentColor" />
+            </svg>
+            <span>Night</span>
+          </button>
+        </div>
+        <button type="button" class="ctrl" id="btn-leitura" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 5.5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5.5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+          <span class="ctrl-rotulo">Modo leitura</span>
+        </button>
+      </div>
+
+      <a class="btn btn-primario topo-cta" href="#ferramenta" data-nav="ferramenta">Monte seu leitor</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- INÍCIO -->
+    <section id="inicio" class="secao secao-inicio" aria-labelledby="t-inicio">
+      <div class="hero">
+        <div class="hero-texto">
+          <p class="hero-sobre">Ergonomia visual baseada em evidências para livros e revistas infantojuvenis.</p>
+          <h1 id="t-inicio" class="hero-titulo">Páginas que crianças conseguem — e querem — ler até o fim.</h1>
+          <p class="hero-sub">Para quem faz o livro: editores, designers, diagramadores, ilustradores e produtores gráficos que publicam para leitores de 0 a 17 anos que cresceram entre telas. Cada recomendação mostra a fonte e a força da evidência.</p>
+          <div class="hero-acoes">
+            <a class="btn btn-primario btn-grande" href="#ferramenta" data-nav="ferramenta">Monte seu leitor</a>
+            <a class="btn btn-secundario btn-grande" href="#guia" data-nav="guia">Ver o guia</a>
+          </div>
+        </div>
+
+        <figure class="hero-pagina">
+          <div class="pagina-demo" aria-hidden="true">
+            <p class="pagina-texto">O gato subiu no muro.<br>Lá de cima, viu a cidade<br>acordar devagar.<br>Primeiro as padarias,<br>depois os pardais.</p>
+            <div class="cota-entrelinha"><span>entrelinha 1,5</span></div>
+          </div>
+          <figcaption>Primeira leitura (6–7 anos): altura-x de 3,5 a 4,5 mm, entrelinha 1,4 a 1,6, uma unidade de sentido por linha. Selo B.</figcaption>
+        </figure>
+      </div>
+
+      <div class="bloco-inicio">
+        <h2 class="titulo-bloco">O problema em três dados</h2>
+        <div class="dados" id="dados-inicio"></div>
+      </div>
+
+      <div class="bloco-inicio como-funciona">
+        <h2 class="titulo-bloco">Como funciona</h2>
+        <ol class="passos">
+          <li><strong>Descreva o leitor e o projeto.</strong> Oito perguntas: idade, estágio de leitura, tipo de publicação, suporte, modo de leitura, relação com a leitura, necessidades de acesso e objetivo.</li>
+          <li><strong>Receba a ficha de editoração.</strong> Altura-x, entrelinha, medida, alinhamento, imagem, papel e digital, em faixas — não em um número só.</li>
+          <li><strong>Veja o porquê de cada recomendação.</strong> Cada linha mostra o selo de evidência e abre a diretriz e a fonte, sem sair da ficha.</li>
+        </ol>
+        <a class="btn btn-primario" href="#ferramenta" data-nav="ferramenta">Começar pela ferramenta</a>
+      </div>
+
+      <div class="bloco-inicio">
+        <h2 class="titulo-bloco">Por fase do leitor</h2>
+        <p class="bloco-nota">Estágio não é idade: em 2024, quatro em cada dez crianças não estavam alfabetizadas ao fim do 2º ano. As idades abaixo são típicas, não regras.</p>
+        <div class="fases" id="fases-inicio"></div>
+      </div>
+
+      <div class="bloco-inicio">
+        <h2 class="titulo-bloco">Por tema</h2>
+        <div class="temas-grid" id="temas-inicio"></div>
+      </div>
+
+      <div class="bloco-inicio dois-blocos">
+        <div>
+          <h2 class="titulo-bloco">Mito em destaque</h2>
+          <div id="mito-destaque"></div>
+        </div>
+        <div>
+          <h2 class="titulo-bloco">Como avaliamos</h2>
+          <p class="bloco-nota">Toda recomendação recebe um selo. O selo vale para a afirmação, não para o estudo: a mesma meta-análise pode sustentar uma associação com A e uma causa com D.</p>
+          <div class="selos-faixa" id="selos-inicio"></div>
+          <a class="link-seta" href="#sobre" data-nav="sobre">Ler o método completo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONTE SEU LEITOR -->
+    <section id="ferramenta" class="secao secao-ferramenta" aria-labelledby="t-ferramenta">
+      <header class="secao-cabecalho">
+        <h2 id="t-ferramenta">Monte seu leitor</h2>
+        <p class="secao-resumo">Oito perguntas sobre o leitor e o projeto viram uma ficha de editoração: faixas de valores, o porquê de cada uma e o nível de evidência. Leva menos de três minutos. Nada do que você responde sai do seu navegador.</p>
+        <div class="exemplos">
+          <span class="exemplos-rotulo">Comece por um exemplo:</span>
+          <div class="exemplos-lista" id="exemplos"></div>
+        </div>
+      </header>
+
+      <div class="ferramenta-grid">
+        <div class="perguntas" id="perguntas">
+          <div class="perguntas-topo">
+            <p class="progresso" id="progresso" aria-live="polite">Pergunta 1 de 8</p>
+            <div class="alvo" id="alvo-perfil" hidden role="radiogroup" aria-label="Perfil em edição">
+              <button type="button" role="radio" aria-checked="true" data-alvo="A">Perfil A</button>
+              <button type="button" role="radio" aria-checked="false" data-alvo="B">Perfil B</button>
+            </div>
+          </div>
+          <ol class="passos-pontos" id="passos" aria-label="Ir para a pergunta"></ol>
+          <div class="pergunta" id="pergunta-atual"></div>
+          <div class="pergunta-nav">
+            <button type="button" class="btn btn-secundario" id="btn-anterior">Anterior</button>
+            <button type="button" class="btn btn-primario" id="btn-proxima">Próxima</button>
+          </div>
+
+          <details class="restricoes" id="restricoes">
+            <summary>Restrições de produção (opcional)</summary>
+            <p class="campo-ajuda">Formato, páginas, cores e papel geram alertas de conflito. Nunca sobrescrevem a ficha em silêncio.</p>
+            <div class="campos">
+              <label class="campo"><span>Formato</span><select id="r-formato"></select></label>
+              <label class="campo"><span>Número de páginas</span><input id="r-paginas" type="number" min="8" max="600" step="1" inputmode="numeric" placeholder="ex.: 48"></label>
+              <label class="campo"><span>Cores</span><select id="r-cores">
+                  <option value="">Não definido</option>
+                  <option value="4">4 cores</option>
+                  <option value="2">2 cores</option>
+                  <option value="1">1 cor</option>
+                </select></label>
+              <label class="campo"><span>Papel disponível</span><select id="r-papel"></select></label>
+              <label class="campo"><span>Extensão do texto (palavras)</span><input id="r-palavras" type="number" min="1" step="1" inputmode="numeric" placeholder="ex.: 3000"></label>
+            </div>
+          </details>
+        </div>
+
+        <div class="ficha-col" id="ficha-col">
+          <div class="ficha-acoes" id="ficha-acoes"></div>
+          <div id="ficha" class="ficha" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIA -->
+    <section id="guia" class="secao" aria-labelledby="t-guia">
+      <header class="secao-cabecalho">
+        <h2 id="t-guia">Guia de editoração</h2>
+        <p class="secao-resumo">Regras de ouro, valores por fase e diretrizes com selo de evidência, por tema. Cada diretriz diz para quem vale, por quê e onde está a fonte.</p>
+      </header>
+      <div class="guia-filtros" id="guia-filtros"></div>
+      <div class="abas-tema" role="tablist" aria-label="Temas do guia" id="guia-abas"></div>
+      <div id="guia-painel" class="guia-painel"></div>
+    </section>
+
+    <!-- MITOS -->
+    <section id="mitos" class="secao" aria-labelledby="t-mitos">
+      <header class="secao-cabecalho">
+        <h2 id="t-mitos">Mitos e evidências</h2>
+        <p class="secao-resumo">Crenças que levam a más decisões de projeto, com veredito, o que a pesquisa mostra e um argumento pronto para copiar.</p>
+      </header>
+      <div class="filtros" id="mitos-filtros"></div>
+      <div class="cartoes" id="mitos-lista"></div>
+    </section>
+
+    <!-- REFERÊNCIAS -->
+    <section id="referencias" class="secao" aria-labelledby="t-referencias">
+      <header class="secao-cabecalho">
+        <h2 id="t-referencias">Referências</h2>
+        <p class="secao-resumo">Biblioteca filtrável. Cada item traz o que o estudo mostrou, em uma frase, e as diretrizes que ele sustenta.</p>
+      </header>
+      <div class="ref-busca">
+        <label class="campo campo-busca"><span>Filtrar por autor, título ou tema</span><input id="ref-busca" type="search" placeholder="ex.: Wilkins, espaçamento, meta-análise" autocomplete="off"></label>
+      </div>
+      <div class="filtros" id="ref-filtros"></div>
+      <p class="contagem" id="ref-contagem" aria-live="polite"></p>
+      <ol class="ref-lista" id="ref-lista"></ol>
+      <div class="ref-mais" id="ref-mais"></div>
+    </section>
+
+    <!-- SOBRE E MÉTODO -->
+    <section id="sobre" class="secao" aria-labelledby="t-sobre">
+      <header class="secao-cabecalho">
+        <h2 id="t-sobre">Sobre e método</h2>
+        <p class="secao-resumo">O Ergomino é uma ferramenta de consulta para quem faz o livro, não um blog sobre telas. Cada página termina numa decisão de editoração.</p>
+      </header>
+      <div class="sobre-grid">
+        <article class="sobre-bloco sobre-largo sobre-selos">
+          <h3>Os selos</h3>
+          <ul class="selos-lista" id="selos-sobre"></ul>
+        </article>
+        <article class="sobre-bloco">
+          <h3>O que o Ergomino é</h3>
+          <p>Referência de consulta, ferramenta de especificação, curadoria com selo de evidência, contexto brasileiro.</p>
+          <h3>O que não é</h3>
+          <p>Orientação médica, manifesto contra telas, substituto de teste com leitores reais, vitrine de fontes.</p>
+        </article>
+        <article class="sobre-bloco">
+          <h3>Regras de uso dos selos</h3>
+          <ul class="lista">
+            <li>O selo vale para a afirmação, não para o estudo. Uma meta-análise de dados transversais sustenta "associação" com A e "causa" com D.</li>
+            <li>Certeza baixa desce um nível: meta-análise que os próprios autores classificam como de certeza baixa recebe B.</li>
+            <li>Todo selo tem link para as fontes e data de revisão.</li>
+            <li>Quando a evidência muda, o selo muda — e o histórico registra.</li>
+          </ul>
+        </article>
+        <article class="sobre-bloco">
+          <h3>Privacidade</h3>
+          <p>O site não coleta nenhum dado: sem contas, sem cookies, sem analítica, sem fontes ou scripts de terceiros. O perfil que você monta descreve um público, nunca uma criança identificável. Preferências e perfis salvos ficam só no seu navegador e podem ser apagados a qualquer momento.</p>
+          <button type="button" class="btn btn-secundario" id="btn-apagar-dados">Apagar o que está salvo neste navegador</button>
+        </article>
+        <article class="sobre-bloco">
+          <h3>Linguagem</h3>
+          <p>"Viciados em dopamina" não é um conceito científico e estigmatiza crianças. O site fala em <em>leitores formados num ambiente de recompensas rápidas</em>, e distingue o que se sabe do que se supõe.</p>
+          <h3>Curadoria e governança</h3>
+          <p>Equipe editorial e conselho consultivo voluntário (oftalmologia, psicologia cognitiva, fonoaudiologia, tipografia, alfabetização). Sem patrocínio de fundições, fabricantes de lentes ou editoras citadas. Conteúdo sob licença CC BY 4.0 (sugestão a confirmar).</p>
+        </article>
+        <article class="sobre-bloco">
+          <h3>Histórico de mudanças</h3>
+          <ul class="lista" id="historico"></ul>
+          <h3>Sugerir correção</h3>
+          <p>Achou um erro, um dado desatualizado ou uma fonte melhor? O formulário gera um texto estruturado para enviar à equipe; nada é enviado automaticamente.</p>
+          <button type="button" class="btn btn-secundario" id="btn-correcao">Sugerir correção</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-inner">
+      <p><strong>Ergomino</strong> · <span id="rodape-versao"></span> · revisado em <time id="rodape-data"></time>.</p>
+      <p class="rodape-links"><a href="#sobre" data-nav="sobre">Sobre e método</a> <a href="#referencias" data-nav="referencias">Referências</a> <button type="button" class="link-botao" id="btn-correcao-rodape">Sugerir correção</button></p>
+      <p class="rodape-nota">Nenhum dado é coletado. Nenhuma requisição sai para terceiros.</p>
+    </div>
+  </footer>
+
+  <nav class="abas" aria-label="Navegação principal">
+    <a href="#inicio" data-nav="inicio"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 11.5L12 4l8 7.5V20h-5.5v-5h-5v5H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      </svg><span>Início</span></a>
+    <a href="#ferramenta" data-nav="ferramenta" class="aba-destaque"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <circle cx="9" cy="7" r="2.2" fill="currentColor" />
+        <circle cx="15" cy="12" r="2.2" fill="currentColor" />
+        <circle cx="8" cy="17" r="2.2" fill="currentColor" />
+      </svg><span>Ferramenta</span></a>
+    <a href="#guia" data-nav="guia"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 5.5h7a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H3zM21 5.5h-7a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+      </svg><span>Guia</span></a>
+    <a href="#mitos" data-nav="mitos"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M9.5 9.5a2.5 2.5 0 1 1 3.8 2.1c-.9.6-1.3 1.1-1.3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <circle cx="12" cy="16.8" r="1.1" fill="currentColor" />
+      </svg><span>Mitos</span></a>
+    <button type="button" id="btn-mais"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="5" cy="12" r="2.2" fill="currentColor" />
+        <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+        <circle cx="19" cy="12" r="2.2" fill="currentColor" />
+      </svg><span>Mais</span></button>
+  </nav>
+
+  <button type="button" class="sair-leitura" id="btn-sair-leitura" hidden>Sair do modo leitura</button>
+
+  <div class="gaveta-fundo" id="gaveta-fundo" hidden></div>
+  <aside id="gaveta" class="gaveta" role="dialog" aria-modal="false" aria-labelledby="gaveta-titulo" hidden>
+    <div class="gaveta-alca" id="gaveta-alca" role="separator" aria-orientation="vertical" tabindex="0" aria-label="Redimensionar painel. Use as setas para ajustar" aria-valuemin="360" aria-valuemax="1200" aria-valuenow="480">
+      <span class="alca-grip" aria-hidden="true"></span>
+    </div>
+    <div class="gaveta-cabecalho">
+      <p class="gaveta-tipo" id="gaveta-tipo"></p>
+      <h2 class="gaveta-titulo" id="gaveta-titulo"></h2>
+      <button type="button" class="gaveta-fechar" id="gaveta-fechar" aria-label="Fechar painel">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="gaveta-corpo" id="gaveta-corpo" tabindex="-1"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/regras.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
